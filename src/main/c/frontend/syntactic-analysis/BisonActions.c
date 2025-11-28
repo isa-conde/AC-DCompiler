@@ -407,14 +407,6 @@ Identifier * IdentifierSemanticAction(char * id) {
 	return identifier;
 }
 
-ComponentList * EmptyComponentListSemanticAction() {
-	_logSyntacticAnalyzerAction(__FUNCTION__);
-	ComponentList * componentList = calloc(1, sizeof(ComponentList));
-	componentList->current = NULL;
-	componentList->next = NULL;
-	return componentList;
-}
-
 ComponentList * NewComponentListSemanticAction(Component * component) {
 	_logSyntacticAnalyzerAction(__FUNCTION__);
 	ComponentList * componentList = calloc(1, sizeof(ComponentList));

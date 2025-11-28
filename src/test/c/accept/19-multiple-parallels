@@ -1,0 +1,26 @@
+Circuit multiple_parallels {
+    Parallel {
+        Branch B1 {
+            Resistor R1 (Regular, 220, base)
+        },
+        Branch B2 {
+            Resistor R2 (Thermistor, 220, base)
+        }
+    },
+    Parallel {
+        Branch B3 {
+            Ammeter A1
+        },
+        Branch B4 {
+            Resistor R3 (Potentiometer, 220, kilo)
+        }
+    },
+    Parallel {
+        Branch B5 {
+            Inductor L1 ()
+        },
+        Branch B6 {
+            Capacitor C1 (+|-)
+        }
+    }
+}

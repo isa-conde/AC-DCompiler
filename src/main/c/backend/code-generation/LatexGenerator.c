@@ -156,22 +156,22 @@ void _generateParallelLeft(Parallel * parallel){
 
 void _generateSwitch(Identifier * id, ParameterList * params){
 	if (params->current->switchState == OPEN){
-		_output("[nos, l=%s] ", id->id);
+		_output("[nos, l=$%s$] ", id->id);
 	}else{
-		_output("[ncs, l=%s] ", id->id);
+		_output("[ncs, l=$%s$] ", id->id);
 	}
 }
 
 void _generateVoltmeter(Identifier * id){
-	_output("[voltmeter, l = %s] ", id->id);
+	_output("[voltmeter, l=$%s$] ", id->id);
 }
 
 void _generateAmmeter(Identifier * id){
-	_output("[ammeter, l = %s] ", id->id);
+	_output("[ammeter, l=$%s$] ", id->id);
 }
 
 void _generateInductor(Identifier * id, ParameterList * params){
-	_output("[L");
+	_output("[L, ");
 	_generateLabel(id, params, "H");
 	_output("] ");
 }
@@ -228,7 +228,7 @@ void _generateLabel(Identifier * id, ParameterList * params, char * unit){
 		}
 		_output("%s$", unit);
 	}else {
-		_output("l=%s", id->id);
+		_output("l=$%s$", id->id);
 	}
 }
 

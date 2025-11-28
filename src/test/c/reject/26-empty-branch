@@ -1,0 +1,9 @@
+Circuit empty_branch {
+    Parallel {
+        Branch B1 {
+        },
+        Branch B2 {
+            Resistor R1 (Regular, 10, kilo)
+        }
+    }
+}

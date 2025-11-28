@@ -2,5 +2,5 @@ Circuit capacitor_test {
     Capacitor C1 (+|-, 22, micro),
     Capacitor C2 (-|+, 10),
     Capacitor C3 (10, mega),
-    Capacitor C4 (100)
+    Capacitor C4 ()
 }

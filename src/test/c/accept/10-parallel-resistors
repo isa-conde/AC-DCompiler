@@ -1,9 +1,9 @@
 Circuit parallel_network {
     Parallel {
-        Branch B_left {
+        Branch B_right {
             Resistor R_left (Thermistor, 5, kilo)
         },
-        Branch B_right {
+        Branch B_left {
             Resistor R_right (Photoresistor, 2, kilo)
         }
     }

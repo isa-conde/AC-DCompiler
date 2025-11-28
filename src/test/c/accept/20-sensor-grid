@@ -1,6 +1,6 @@
 Circuit sensor_grid {
     Resistor R_th (Thermistor),
     Resistor R_reg (Regular, 1.2, kilo),
-    Voltmeter V_sense,
-    Ammeter A_line
+    Voltmeter VSense,
+    Ammeter ALine
 }

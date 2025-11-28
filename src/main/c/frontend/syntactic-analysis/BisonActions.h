@@ -61,7 +61,6 @@ Parameter * ParameterResistorTypeSemanticAction(ResistorType resistorType);
 Parameter * ParameterSwitchStateSemanticAction(SwitchState switchState);
 Parameter * ParameterPolaritySemanticAction(Polarity * polarity);
 Identifier * IdentifierSemanticAction(char * identifier);
-ComponentList * EmptyComponentListSemanticAction();
 ComponentList * NewComponentListSemanticAction(Component * component);
 ComponentList * AppendComponentSemanticAction(ComponentList * componentList, Component * component);
 

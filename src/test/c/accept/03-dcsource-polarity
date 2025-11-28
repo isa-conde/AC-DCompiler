@@ -2,5 +2,5 @@ Circuit dc_supply {
     DCSource S_dc1 (+|-, 12, mega),
     DCSource S_dc2 (-|+, 10),
     DCSource S_dc3 (12, micro),
-    DCSource S_dc4 (10000, milli)
+    DCSource S_dc4 (10000)
 }

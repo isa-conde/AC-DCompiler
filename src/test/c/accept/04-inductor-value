@@ -1,4 +1,5 @@
 Circuit inductive_line {
     Inductor L1 (0.015, micro),
-    Inductor L2 (0.015, milli)
+    Inductor L2 (0.015),
+    Inductor L3 ()
 }

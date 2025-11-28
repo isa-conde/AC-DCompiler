@@ -1,4 +1,4 @@
 Circuit monitor {
     Voltmeter Vout,
-    Switch Sw_control (Open)
+    Switch Swcontrol (Open)
 }

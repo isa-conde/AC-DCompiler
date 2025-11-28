@@ -41,7 +41,7 @@ void yyerror(const YYLTYPE * location, const char * message) {}
     Element * element;
     ElementList * elementList, elementListOpt;
     Component * component;
-    ComponentList * componentList, componentListOpt;
+    ComponentList * componentList;
     ParameterList * componentParamsOpt, * parameterList, * parameterListOpt;
     Identifier * identifier;
     Branch * branch;
@@ -113,7 +113,7 @@ void yyerror(const YYLTYPE * location, const char * message) {}
 %type <element> element
 %type <elementList> elementList elementListOpt
 %type <component> component
-%type <componentList> componentList componentListOpt
+%type <componentList> componentList
 %type <parameterList> valueParams complexValueParams polarityParams emptyParams
 %type <parameterList> inductorParams resistorParams capacitorParams switchParams directSourceParams alternatingSourceParams
 %type <identifier> identifier
@@ -166,18 +166,13 @@ branchList:
 	| branchList COMMA branch                       { $$ = AppendBranchSemanticAction($1, $3); }
     ;
 
-componentListOpt:
-      %empty                             	  { $$ = EmptyComponentListSemanticAction(); }
-	| componentList                           { $$ = $1; }
-    ;
-
 componentList:
       component                                        { $$ = NewComponentListSemanticAction($1); }
     ;
 
 /* Branch: "Branch" ID { componentes } */
 branch:
-      BRANCH identifier OPEN_BRACE componentListOpt CLOSE_BRACE
+      BRANCH identifier OPEN_BRACE componentList CLOSE_BRACE
                                                     { $$ = BranchSemanticAction($2, $4); }
     ;
 

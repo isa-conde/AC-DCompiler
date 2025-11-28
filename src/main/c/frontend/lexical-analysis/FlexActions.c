@@ -1,5 +1,6 @@
 #include "FlexActions.h"
 #include <string.h>
+#include <stdlib.h>
 
 /* MODULE INTERNAL STATE */
 
@@ -57,7 +58,6 @@ CompilationStatus KeywordLexemeAction(TokenLabel label) {
     Token * token = createToken(_lexicalAnalyzer, label);
     _logTokenAction(__FUNCTION__, token);
     CompilationStatus status = pushToken(_lexicalAnalyzer, token);
-	printf("PARA LABEL: %d STATUS: %d\n", label, status);
     destroyToken(token);
     return status;
 }
@@ -118,6 +118,9 @@ CompilationStatus SwitchStateLexemeAction(SwitchState switchState) {
 
 CompilationStatus PolarityLexemeAction(TokenLabel label) {
     Token * token = createToken(_lexicalAnalyzer, label);
+	Polarity * polarity = calloc(1, sizeof(Polarity));
+    *polarity = (label == POSITIVE_FIRST_TOKEN) ? POSITIVE_FIRST : NEGATIVE_FIRST;
+    token->semanticValue->polarityToken = polarity;
     _logTokenAction(__FUNCTION__, token);
     CompilationStatus status = pushToken(_lexicalAnalyzer, token);
     destroyToken(token);
